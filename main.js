@@ -105,7 +105,7 @@ function resetBtnFn () {
 function clearBtnFn () {
     var clearLoc = displayDsp.value;
     memNewNumber = false;
-    var clearLocStr = clearLoc.toString(); //привел число к строке bb
+    var clearLocStr = clearLoc.toString();
     if (clearLocStr.length != 1)  {
         clearLoc = parseFloat(clearLocStr.slice(0, -1));
     } else {
