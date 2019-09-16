@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="main.css">
+    <title>My Calculator</title>
+</head>
+<body> 
+    <script src="main.js" async></script>
+        <main>
+            <div class="calc">
+                <div class="display">
+                    <input disabled type="text/number" max="9999999999" min="0.000000001" maxlength="10" id="disp" value=0 class="calc_display-input" placeholder="0000000000" >
+                </div>
+                <table class="calc_table">
+                    <tr class="buttons_rows">
+                        <td>
+                            <button type="button" id="reset" class="btn">C</button> 
+                        </td>
+                        <td>
+                            <button type="button" class="btn operation">/</button> 
+                        </td>
+                        <td>
+                            <button type="button" class="btn operation">x</button> 
+                        </td>
+                        <td>
+                            <button type="button" id="clear" class="btn"><< </button> 
+                        </td>
+                    </tr>
+                    <tr class="buttons_rows">
+                        <td>
+                            <button type="button" class="btn number">7</button> 
+                        </td>
+                        <td>
+                            <button type="button" class="btn number">8</button> 
+                        </td>
+                        <td>
+                            <button type="button" class="btn number">9</button> 
+                        </td>
+                        <td>
+                            <button type="button" class="btn operation">-</button> 
+                        </td>
+                    </tr>
+                    <tr class="buttons_rows">
+                        <td>
+                            <button type="button" class="btn number">4</button> 
+                        </td>
+                        <td>
+                            <button type="button" class="btn number">5</button> 
+                        </td>
+                        <td>
+                            <button type="button" class="btn number">6</button> 
+                        </td>
+                        <td>
+                            <button type="button" class="btn operation">+</button> 
+                        </td>
+                    </tr>
+                    <tr class="buttons_rows">
+                        <td>
+                            <button type="button" class="btn number">1</button> 
+                        </td>
+                        <td>
+                            <button type="button" class="btn number">2</button> 
+                        </td>
+                        <td>
+                            <button type="button" class="btn number">3</button> 
+                        </td>
+                        <td rowspan="2">
+                            <button type="button" id="result" class="btn btn_equal operation">=</button> 
+                        </td>
+                    </tr>
+                    <tr class="buttons_rows">
+                        <td>
+                            <button type="button" class="btn operation">%</button> 
+                        </td>
+                        <td>
+                            <button type="button" class="btn number">0</button> 
+                        </td>
+                        <td>
+                            <button type="button" id="dec" class="btn">,</button> 
+                        </td>
+                    </tr>
+                    <tr class="buttons_rows">
+                        <td colspan="2">
+                            <button type="button" id="time" class="btn_data">Время</button> 
+                        </td>
+                        <td colspan="2">
+                            <button type="button" id="curDate" class="btn_data">Дата</button> 
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </main>
+        <p>Собственно, отличия моего калькулятора от примера Loft School:</p>
+    <ul>
+      <li> добавлена функция вычисления процентов и соответствующая кнопка (%)
+      <li> добавлена функция стирания последнего символа и соответствующая кнопка (<<) </li>  
+      <!-- <li> добавлена функция набора цифр кнопками клавиатуры - НЕТ -->
+      <!--<li> добавлена функция нажатия кнопок операций кнопками клавиатуры - НЕТ -->
+      <!--<li> добавлена функция нажатия равно кнопкой Enter на клавиатуре - НЕТ -->
+      <li> добавлено отображение текущего времени и даты на дисплее калькулятора вызовом соответствующими кнопками
+      <li> исправлено отображение клавиши умножить с "*" на "Х"
+      <li> удалена одна из двух кнопок стирания СЕ
+      <li> исправлено: при делении на ноль любого числа ( в т.ч. и отрицательного) выходит "Ошибка!", а не infinity
+      <li> исправлена ошибка округления ( пример: 0,3+0,36 = 0,5(6) 
+      <li> установлена максимальная длина вводимого числа в поле дислей
+      <Li> при превышении максимальной длины выводимого числа - экспонентный вид отображения числа
+      <li> исправлена ошибка вывода NaN при стирании кнопкой << </li>
+    </ul>
+</body>
+</html>
