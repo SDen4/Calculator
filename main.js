@@ -25,16 +25,10 @@ for (var i = 0; i<numbersBtn.length; i++) {
 };
 
 decBtn.addEventListener('click', decBtnFn);
-
 resetBtn.addEventListener('click', resetBtnFn);
-
 clearBtn.addEventListener('click', clearBtnFn);
-
 timeBtn.addEventListener('click', timeBtnFn);
-
 curDateBtn.addEventListener('click', curDateBtnFn);
-
-
 
 function numberFn (numbersBtn) {
     var displayDspStr = displayDsp.value.toString();
@@ -48,10 +42,7 @@ function numberFn (numbersBtn) {
         } else {
             if (displayDspLength<10) {
                 displayDsp.value += numbersBtn;
-            } /*else {
-                var a = parseFloat(memCurNumber);
-                memCurNumber = a.toExponential();
-            }*/
+            }
         }
     }
 };
@@ -75,15 +66,15 @@ function operationFn (op) {
         } else { //функция равно "="
             memCurNumber = parseFloat(localA);
         }
-        displayDsp.value = memCurNumber;
+        displayDsp.value = +(memCurNumber.toFixed(8)); //убрана ошибка 0,1+0,2
 
                 /* блок вывода результата в экспонентном виде*/ 
-                var maxNum = parseFloat(displayDsp.value)
+                var maxNum = parseFloat (displayDsp.value)
                 
                 if (maxNum>9999999999 || maxNum<0.00000001) {
                 		displayDsp.value = memCurNumber.toExponential(5);
                 } else {
-                    displayDsp.value = memCurNumber;
+                    displayDsp.value = +(memCurNumber.toFixed(8)); //убрана ошибка 0,1+0,2
                 };  
 
         memCashOperation = op; 
@@ -142,4 +133,5 @@ function curDateBtnFn () {
 	var dateloc = new Date();
     displayDsp.value = dateloc.toLocaleString("ru", {day: 'numeric', month: 'numeric', year: 'numeric'});
     memNewNumber = true;
+    setTimeout(function() {clearInterval(); displayDsp.value = 0}, 5000);
 };
