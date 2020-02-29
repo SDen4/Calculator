@@ -9,6 +9,7 @@
 	border-radius: 6px;
 	padding: 0;
 	cursor: pointer;
+	outline: none;
 }
 .btn:hover {
 	background-color: #D8D8D8;
@@ -36,11 +37,11 @@
 	padding: 0px 10px;
 }
 .calc {
-margin: 40px;
-background-color: #FF8000;
-width: 376px;
-padding: 5px;
-border-radius: 6px;
+	margin: 40px;
+	background-color: #FF8000;
+	width: 376px;
+	padding: 5px;
+	border-radius: 6px;
 }
 .btn_data {
 	width: 184px;
@@ -53,6 +54,7 @@ border-radius: 6px;
 	border-radius: 6px;
 	padding: 0;
 	cursor: pointer;
+	outline: none;
 }
 .btn_data:hover {
 	background-color: #D8D8D8;
